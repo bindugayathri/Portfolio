@@ -1,0 +1,487 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    --primary-color: #4831d4;
+    --primary-color-dark: #3723a1;
+    --title-color: #393939;
+    --text-color: #5d5d5d;
+    --body-color: #f7f7f7;
+    --container-color: #ffffff;
+    --border-color: #e9e9e9;
+    --tag-bg-color: #f1f1f1;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.1rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /*========== z-index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semibold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    /* Corrected: Centered the container and added padding */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 6rem 0 2rem;
+}
+
+.section__title {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.section__subtitle {
+    font-size: var(--normal-font-size);
+    text-align: center;
+    margin-bottom: 4rem;
+    /* Added max-width for better readability on large screens */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--container-color);
+    z-index: var(--z-fixed);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    color: var(--primary-color);
+    font-weight: var(--font-bold);
+    font-size: 1.5rem;
+}
+
+.nav__list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+/*=============== BUTTON ===============*/
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: var(--font-medium);
+    transition: background-color 0.3s;
+    border: 2px solid transparent;
+}
+
+.button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.button--flex svg{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.button--outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button--outline:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/*=============== TAG ===============*/
+.tag {
+    display: inline-block;
+    background-color: var(--tag-bg-color);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: var(--small-font-size);
+    border: 1px solid var(--border-color);
+    margin: 0.25rem;
+}
+
+/*=============== HOME ===============*/
+.home {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    padding-top: calc(var(--header-height) + 4rem);
+    padding-bottom: 4rem;
+}
+
+.home__container {
+    text-align: center;
+    /* Added flex properties for perfect centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__subtitle {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+.home__description {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+}
+
+.home__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.home__socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.home__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--container-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.home__social-link svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--primary-color);
+}
+
+.home__social-link:hover {
+    transform: translateY(-2px);
+}
+
+.home__tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/*=============== ABOUT ===============*/
+.about__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+.about__journey h3{
+    font-size: var(--h3-font-size);
+    margin-bottom: 1rem;
+}
+.about__journey p {
+    margin-bottom: 1rem;
+}
+.about__tags{
+    margin-top: 2rem;
+}
+
+.about__values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.value-card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+.value-card__icon{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/*=============== SKILLS ===============*/
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+.skill-card h4{
+    margin-bottom: 1rem;
+}
+
+/*=============== EXPERIENCE ===============*/
+.experience__card {
+    background-color: var(--container-color);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.experience__info p{
+    margin-bottom: 0.5rem;
+}
+.experience__tags{
+    margin-top: 1rem;
+}
+.experience__achievements ul{
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+.experience__achievements li{
+    margin-bottom: 0.75rem;
+}
+
+/*=============== PROJECTS ===============*/
+.projects__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.project-card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+.project-card h3{
+    margin-bottom: 0.5rem;
+}
+.project-description {
+    margin-bottom: 1.5rem;
+}
+.project-card h4{
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.project-card ul{
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.project-card li{
+    margin-bottom: 0.5rem;
+}
+.project-tags {
+    margin-bottom: 2rem;
+}
+.project-actions{
+    display: flex;
+    gap: 1rem;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+
+/*=============== EDUCATION ===============*/
+.education__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+.education__column h3{
+    font-size: var(--h3-font-size);
+    margin-bottom: 1.5rem;
+}
+.education-card,
+.certification-card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+.education-card p {
+    margin-top: 0.25rem;
+}
+.certification-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*=============== CONTACT ===============*/
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.contact-card,
+.contact-info-card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.contact-card {
+    text-align: center;
+}
+.contact-card h4 {
+    margin-bottom: 0.5rem;
+}
+.contact-card p {
+    margin-bottom: 1.5rem;
+}
+.contact-info-card {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    background-color: var(--container-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__link{
+    color: var(--text-color);
+    margin-right: 1.5rem;
+    font-weight: var(--font-medium);
+}
+.footer__link:hover{
+    color: var(--primary-color);
+}
+
+/*=============== MEDIA QUERIES FOR RESPONSIVENESS ===============*/
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .nav__list { display: none; } /* On mobile, we hide the list. A real project would use JS for a hamburger menu */
+    
+    .section{
+        padding: 4rem 0 1rem;
+    }
+    
+    .about__container, .projects__grid, .education__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience__card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .contact__grid{
+        grid-template-columns: 1fr;
+    }
+    .contact-info-card{
+        grid-column: 1 / 2;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer__container{
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
