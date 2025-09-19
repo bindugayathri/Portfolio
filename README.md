@@ -3,7 +3,7 @@
 
 This repository contains the source code for my personal data science and machine learning portfolio.
 
-### **[View the Live Website Here](https://bindugayathri.github.io)**
+### **[View the Live Website Here](https://bindugayathri.github.io/Portfolio/)**
 
 ---
 
